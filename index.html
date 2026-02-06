@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Shop</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; text-align: center; padding: 20px; }
+        .item { background: white; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        button { background: #248bcf; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Наш Магазин</h1>
+    <div class="item">
+        <h3>Читы Standoff 2 (Тест)</h3>
+        <p>Цена: 0 руб.</p>
+        <button onclick="buy('Читы SO2')">Купить</button>
+    </div>
+    <div class="item">
+        <h3>Голда 1000 шт.</h3>
+        <p>Цена: 0 руб.</p>
+        <button onclick="buy('1000 Gold')">Купить</button>
+    </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Расширить на весь экран
+
+        function buy(item) {
+            tg.sendData(item); // Отправить данные боту
+            tg.close(); // Закрыть мини-апп
+        }
+    </script>
+</body>
+</html>
